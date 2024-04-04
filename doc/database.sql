@@ -36,25 +36,12 @@ CREATE TABLE Reserveringen (
     FOREIGN KEY (tafel_id) REFERENCES Tafels(tafel_id) ON DELETE CASCADE
 );
 
--- Bonnen
-CREATE TABLE Bonnen (
-    bonnummer INT AUTO_INCREMENT PRIMARY KEY,
-    date_time DATETIME,
-    totaal_Excl_BTW DECIMAL(10, 2),
-    BTW VARCHAR(3),
+-- Rekeningen
+CREATE TABLE Rekeningen (
+    rekening_id INT AUTO_INCREMENT PRIMARY KEY,
     klant_id INT,
-    tafel_id INT,
-    FOREIGN KEY (klant_id) REFERENCES Klanten(klant_id) ON DELETE CASCADE,
-    FOREIGN KEY (tafel_id) REFERENCES Tafels(tafel_id) ON DELETE CASCADE
-);
-
--- Bonregels
-CREATE TABLE Bonregels (
-    bonregel_id INT AUTO_INCREMENT PRIMARY KEY,
-    bonnummer INT,
     product_id INT,
     aantal INT,
-    prijs_per_stuk DECIMAL(10, 2),
-    FOREIGN KEY (bonnummer) REFERENCES Bonnen(bonnummer) ON DELETE CASCADE,
+    FOREIGN KEY (klant_id) REFERENCES Klanten(klant_id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES Producten(product_id) ON DELETE CASCADE
 );
