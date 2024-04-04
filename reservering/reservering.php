@@ -2,7 +2,6 @@
 
 include "db.php";
 
-$db = new Database("ledelidb");
 
 class Reservering {
     public $reservering_id;

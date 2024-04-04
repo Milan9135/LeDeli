@@ -24,5 +24,4 @@ class DB {
     }
 }
 
-// een database connectie wordt aangemaakt
-$db = new DB("ledelidb");
+$db = new Database("ledelidb");
