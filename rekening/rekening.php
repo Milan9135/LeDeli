@@ -1,6 +1,6 @@
 <?php
 
-include "db.php";
+include '../db.php';
 
 class Rekening {
     public $rekening_id;

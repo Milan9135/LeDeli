@@ -1,10 +1,10 @@
 <?php 
 
-class DB {
+class Database {
     private $pdo; // database connectie
     protected $stmt; // dit is het huidige statement
 
-    public function __construct($db, $host = "localhost", $user = "root", $pass = "")
+    public function __construct($db, $host = "localhost:3307", $user = "root", $pass = "")
     {
         try {
             $this->pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
