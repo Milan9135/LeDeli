@@ -34,7 +34,7 @@ if (isset($_GET['knopje'])) {
 <body>
     <h2>Reservering Bewerken</h2>
     <form method="GET">
-    <?php echo("<label for='reservering_id'>Reservering ID: $reservering_id</label>"); ?>
+        <?php echo("<label for='reservering_id'>Reservering ID: $reservering_id</label>"); ?>
         <?php echo("<input type='hidden' name='reservering_id' value='$reservering_id'>"); ?>
         <label for="klant_id">Klant ID:</label>
         <?php echo("<input type='text' name='klant_id' value='$klant_id'>"); ?>
