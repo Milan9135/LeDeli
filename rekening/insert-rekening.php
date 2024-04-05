@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_id = $_POST['product_id'];
     $aantal = $_POST['aantal'];
 
-    $sql = "INSERT INTO Rekeningen (klant_id, product_id, aantal) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO rekeningen (klant_id, product_id, aantal) VALUES (?, ?, ?)";
     $args = [$klant_id, $product_id, $aantal];
     $db->run($sql, $args);
 }
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="../klant/insert-klant.php">Klanten</a>
     </nav>
     <h2>Rekening Toevoegen</h2>
-    <form action="rekening.php" method="POST">
+    <form action="" method="POST">
         <label for="klant_id">Klant ID:</label><br>
         <input type="text" id="klant_id" name="klant_id"><br>
         <label for="product_id">Product ID:</label><br>

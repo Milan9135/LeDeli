@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Wachtwoord hashen voordat het wordt opgeslagen in de database
     $hashed_wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO Klanten (klant_naam, email, wachtwoord) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO klanten (klant_naam, email, wachtwoord) VALUES (?, ?, ?)";
     $args = [$klant_naam, $email, $hashed_wachtwoord]; // Gebruik het gehashde wachtwoord
     $db->run($sql, $args);
 }
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="../klant/insert-klant.php">Klanten</a>
     </nav>
     <h2>Klant Toevoegen</h2>
-    <form action="klant.php" method="POST">
+    <form action="" method="POST">
         <label for="klant_naam">Naam:</label><br>
         <input type="text" id="klant_naam" name="klant_naam"><br>
         <label for="email">Email:</label><br>

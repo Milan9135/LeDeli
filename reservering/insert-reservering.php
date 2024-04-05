@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $begin_tijd = $_POST['begin_tijd'];
     $eind_tijd = $_POST['eind_tijd'];
 
-    $sql = "INSERT INTO Reserveringen (klant_id, tafel_id, reserverings_datum, begin_tijd, eind_tijd) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO reserveringen (klant_id, tafel_id, reserverings_datum, begin_tijd, eind_tijd) VALUES (?, ?, ?, ?, ?)";
     $args = [$klant_id, $tafel_id, $reserverings_datum, $begin_tijd, $eind_tijd];
     $db->run($sql, $args);
 }
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="../klant/insert-klant.php">Klanten</a>
     </nav>
     <h2>Reservering Toevoegen</h2>
-    <form action="reservering.php" method="POST">
+    <form action="" method="POST">
         <label for="klant_id">Klant ID:</label><br>
         <input type="text" id="klant_id" name="klant_id"><br>
         <label for="tafel_id">Tafel ID:</label><br>

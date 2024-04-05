@@ -4,7 +4,7 @@ include '../db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klant_id = $_POST['klant_id'];
 
-    $sql = "INSERT INTO Tafels (klant_id) VALUES (?)";
+    $sql = "INSERT INTO tafels (klant_id) VALUES (?)";
     $args = [$klant_id];
     $db->run($sql, $args);
 }
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="../klant/insert-klant.php">Klanten</a>
     </nav>
     <h2>Tafel Toevoegen</h2>
-    <form action="tafel.php" method="POST">
+    <form action="" method="POST">
         <label for="klant_id">Klant ID:</label><br>
         <input type="text" id="klant_id" name="klant_id"><br><br>
         <input type="submit" value="Toevoegen">
