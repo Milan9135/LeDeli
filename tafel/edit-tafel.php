@@ -32,6 +32,6 @@ if (isset($_GET['knopje'])) {
         <?php echo("<input type='text' name='klant_id' value='$klant_id'>"); ?>
         <input type="submit" name="knopje" value="Update">
     </form>
-    <a href="select-tafel.php">Terug</a>
+    <h3><a href="select-tafel.php">Terug</a></h3>
 </body>
 </html>

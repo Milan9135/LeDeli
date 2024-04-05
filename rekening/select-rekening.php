@@ -45,7 +45,7 @@ $rekeningen = $db->run($sqlRekeningen)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $rekening['aantal'] ?></td>
             <td>
                 <?php echo("<a href='edit-rekening.php?rekening_id=$rekening[rekening_id]&klant_id=$rekening[klant_id]&product_id=$rekening[product_id]&aantal=$rekening[aantal]'>edit</a>") ?>
-                <?php echo("<a href='delete.php?rekening_id=$rekening[rekening_id]'>delete</a>") ?>
+                <?php echo("<a href='delete-rekening.php?rekening_id=$rekening[rekening_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>

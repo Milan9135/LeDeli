@@ -47,7 +47,7 @@ $reserveringen = $db->run($sqlReserveringen)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $reservering['eind_tijd'] ?></td>
             <td>
                 <?php echo("<a href='edit-reservering.php?reservering_id=$reservering[reservering_id]&klant_id=$reservering[klant_id]&tafel_id=$reservering[tafel_id]&reserverings_datum=$reservering[reserverings_datum]&begin_tijd=$reservering[begin_tijd]&eind_tijd=$reservering[eind_tijd]'>edit</a>") ?>
-                <?php echo("<a href='delete.php?reservering_id=$reservering[reservering_id]'>delete</a>") ?>
+                <?php echo("<a href='delete-reservering.php?reservering_id=$reservering[reservering_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>

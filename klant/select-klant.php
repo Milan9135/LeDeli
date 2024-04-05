@@ -42,7 +42,7 @@ $klanten = $db->run($sqlKlanten)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $klant['wachtwoord'] ?></td>
             <td>
                 <?php echo("<a href='edit-klant.php?klant_id=$klant[klant_id]&klant_naam=$klant[klant_naam]&email=$klant[email]&wachtwoord=$klant[wachtwoord]'>edit</a>") ?>
-                <?php echo("<a href='delete.php?klant_id=$klant[klant_id]'>delete</a>") ?>
+                <?php echo("<a href='delete-klant.php?klant_id=$klant[klant_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>
