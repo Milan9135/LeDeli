@@ -1,5 +1,6 @@
 <?php
-include '../db.php';
+include "../db.php";
+include "klant.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klant_naam = $_POST['klant_naam'];

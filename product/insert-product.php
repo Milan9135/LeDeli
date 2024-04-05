@@ -1,5 +1,6 @@
 <?php
-include '../db.php';
+include "../db.php";
+include "product.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $omschrijving = $_POST['omschrijving'];

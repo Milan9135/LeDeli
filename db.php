@@ -22,6 +22,20 @@ class Database {
         $stmt->execute($args);
         return $stmt;
     }
+
+    function getKlantNaam($klant_id, $db) {
+        $sql = "SELECT klant_naam FROM Klanten WHERE klant_id = ?";
+        $stmt = $db->run($sql, [$klant_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['klant_naam'];
+    }
+    
+    function getProductNaam($product_id, $db) {
+        $sql = "SELECT omschrijving FROM Producten WHERE product_id = ?";
+        $stmt = $db->run($sql, [$product_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['omschrijving'];
+    }
 }
 
 $db = new Database("ledelidb");

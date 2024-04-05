@@ -1,8 +1,5 @@
 <?php
 
-include '../db.php';
-
-
 class Reservering {
     public $reservering_id;
     public $klant_id;

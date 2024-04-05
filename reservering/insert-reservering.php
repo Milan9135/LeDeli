@@ -1,5 +1,6 @@
 <?php
-include '../db.php';
+include "../db.php";
+include "reservering.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klant_id = $_POST['klant_id'];

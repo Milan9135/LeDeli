@@ -1,7 +1,5 @@
 <?php
 
-include '../db.php';
-
 class Rekening {
     public $rekening_id;
     public $klant_id;
