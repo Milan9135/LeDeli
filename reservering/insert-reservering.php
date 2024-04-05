@@ -34,17 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <h2>Reservering Toevoegen</h2>
     <form action="" method="POST">
-        <label for="klant_id">Klant ID:</label><br>
+        <label for="klant_id">Klant ID:</label>
         <input type="text" id="klant_id" name="klant_id"><br>
-        <label for="tafel_id">Tafel ID:</label><br>
+        <label for="tafel_id">Tafel ID:</label>
         <input type="text" id="tafel_id" name="tafel_id"><br>
-        <label for="reserverings_datum">Reserverings Datum:</label><br>
+        <label for="reserverings_datum">Reserverings Datum:</label>
         <input type="date" id="reserverings_datum" name="reserverings_datum"><br>
-        <label for="begin_tijd">Begin Tijd:</label><br>
+        <label for="begin_tijd">Begin Tijd:</label>
         <input type="time" id="begin_tijd" name="begin_tijd"><br>
-        <label for="eind_tijd">Eind Tijd:</label><br>
+        <label for="eind_tijd">Eind Tijd:</label>
         <input type="time" id="eind_tijd" name="eind_tijd"><br><br>
         <input type="submit" value="Toevoegen">
     </form>
+    <h3><a href="select-reservering.php">overzicht reserveringen</a></h3>
 </body>
 </html>

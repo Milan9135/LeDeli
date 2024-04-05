@@ -38,12 +38,13 @@ $producten = $db->run($sqlProducten)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $product['omschrijving'] ?></td>
             <td><?php echo $product['prijs'] ?></td>
             <td>
-                <?php echo("<a href='update.php?product_id=$product[product_id]&omschrijving=$product[omschrijving]&prijs=$product[prijs]'>edit</a>") ?>
+                <?php echo("<a href='edit-product.php?product_id=$product[product_id]&omschrijving=$product[omschrijving]&prijs=$product[prijs]'>edit</a>") ?>
                 <?php echo("<a href='delete.php?product_id=$product[product_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>
 </table>
+<h3><a href="insert-product.php">insert product</a></h3>
 
 </body>
 </html>

@@ -2,7 +2,7 @@ use ledelidb;
 
 -- Klanten
 INSERT INTO Klanten (klant_naam, email, wachtwoord)
-VALUES ('John Doe', 'john@example.com', '$2y$10$Lq5KwyylfId/xwHujvT6bOic0cXWx9aA0qYKsP1EoXyf3tzg82F2K'), -- password123
+VALUES ('Default', 'Default@example.com', '$2y$10$Lq5KwyylfId/xwHujvT6bOic0cXWx9aA0qYKsP1EoXyf3tzg82F2K'), -- password123
         ('Jane Smith', 'jane@example.com', '$2y$10$pDcdcmIzpyOZJ/3c/fjAtuNcBsSR0WWhbL0/X5J7.BhFjFCJXF5Du'); -- qwerty123
 
 -- Tafels

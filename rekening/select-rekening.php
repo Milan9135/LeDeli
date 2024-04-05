@@ -44,12 +44,13 @@ $rekeningen = $db->run($sqlRekeningen)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $db->getProductNaam($rekening['product_id'], $db) ?></td>
             <td><?php echo $rekening['aantal'] ?></td>
             <td>
-                <?php echo("<a href='update.php?rekening_id=$rekening[rekening_id]&klant_id=$rekening[klant_id]&product_id=$rekening[product_id]&aantal=$rekening[aantal]'>edit</a>") ?>
+                <?php echo("<a href='edit-rekening.php?rekening_id=$rekening[rekening_id]&klant_id=$rekening[klant_id]&product_id=$rekening[product_id]&aantal=$rekening[aantal]'>edit</a>") ?>
                 <?php echo("<a href='delete.php?rekening_id=$rekening[rekening_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>
 </table>
+<h3><a href="insert-rekening.php">insert rekening</a></h3>
 
 </body>
 </html>

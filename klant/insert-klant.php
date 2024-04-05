@@ -35,13 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <h2>Klant Toevoegen</h2>
     <form action="" method="POST">
-        <label for="klant_naam">Naam:</label><br>
+        <label for="klant_naam">Naam:</label>
         <input type="text" id="klant_naam" name="klant_naam"><br>
-        <label for="email">Email:</label><br>
+        <label for="email">Email:</label>
         <input type="text" id="email" name="email"><br>
-        <label for="wachtwoord">Wachtwoord:</label><br>
+        <label for="wachtwoord">Wachtwoord:</label>
         <input type="password" id="wachtwoord" name="wachtwoord"><br><br>
         <input type="submit" value="Toevoegen">
     </form>
+    <h3><a href="select-klant.php">overzicht klanten</a></h3>
 </body>
 </html>

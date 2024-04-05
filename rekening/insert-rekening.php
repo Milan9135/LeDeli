@@ -1,6 +1,6 @@
 <?php
 include "../db.php";
-include "rekenening.php";
+include "rekening.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klant_id = $_POST['klant_id'];
@@ -32,13 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <h2>Rekening Toevoegen</h2>
     <form action="" method="POST">
-        <label for="klant_id">Klant ID:</label><br>
+        <label for="klant_id">Klant ID:</label>
         <input type="text" id="klant_id" name="klant_id"><br>
-        <label for="product_id">Product ID:</label><br>
+        <label for="product_id">Product ID:</label>
         <input type="text" id="product_id" name="product_id"><br>
-        <label for="aantal">Aantal:</label><br>
+        <label for="aantal">Aantal:</label>
         <input type="text" id="aantal" name="aantal"><br><br>
         <input type="submit" value="Toevoegen">
     </form>
+    <h3><a href="select-rekening.php">overzicht rekeningen</a></h3>
 </body>
 </html>

@@ -46,3 +46,7 @@ input {
     border-radius: 4px;
     background-color: rgb(119, 114, 114);
 }
+
+th, td {
+    padding: 5px;
+}

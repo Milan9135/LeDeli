@@ -31,11 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <h2>Product Toevoegen</h2>
     <form action="" method="POST">
-        <label for="omschrijving">Omschrijving:</label><br>
+        <label for="omschrijving">Omschrijving:</label>
         <input type="text" id="omschrijving" name="omschrijving"><br>
-        <label for="prijs">Prijs:</label><br>
+        <label for="prijs">Prijs:</label>
         <input type="text" id="prijs" name="prijs"><br><br>
         <input type="submit" value="Toevoegen">
     </form>
+    <h3><a href="select-product.php">overzicht producten</a></h3>
 </body>
 </html>
