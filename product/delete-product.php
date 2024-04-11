@@ -1,13 +1,14 @@
 <?php 
 
-include "../db.php";
+include "product.php";
 
-$id = $_GET["product_id"];
+$product_id = $_GET["product_id"];
 
 if (isset($_GET['knopje'])) {
-    $id = $_GET["product_id"];
-    $sql = "DELETE FROM Producten WHERE product_id=?";
-    $db->run($sql, [$id]);
+    $product_id = $_GET["product_id"];
+
+    $product = new Product($product_id, "empty", "empty");
+    $product->Delete($db);
     header('Location: select-product.php');
 }
 
@@ -25,8 +26,8 @@ if (isset($_GET['knopje'])) {
 <body>
 <h2>Delete row</h2>
 <form method="GET">
-        <label for="id">Product ID:</label>
-        <?php echo("<input type='text' name='product_id' value='$id'>"); ?>
+        <label for="product_id">Product ID:</label>
+        <?php echo("<input type='text' name='product_id' value='$product_id'>"); ?>
         <input type="submit" name="knopje">
     </form>
     <h3><a href="select-product.php">Terug</a></h3>

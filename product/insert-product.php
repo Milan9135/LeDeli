@@ -1,14 +1,12 @@
 <?php
-include "../db.php";
 include "product.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $omschrijving = $_POST['omschrijving'];
     $prijs = $_POST['prijs'];
 
-    $sql = "INSERT INTO producten (omschrijving, prijs) VALUES (?, ?)";
-    $args = [$omschrijving, $prijs];
-    $db->run($sql, $args);
+    $product = new Product("not needed", $omschrijving, $prijs);
+    $product->Insert($db);
 }
 ?>
 

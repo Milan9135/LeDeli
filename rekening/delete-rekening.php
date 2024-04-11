@@ -1,13 +1,13 @@
 <?php 
+include "rekening.php";
 
-include "../db.php";
-
-$id = $_GET["rekening_id"];
+$rekening_id = $_GET["rekening_id"];
 
 if (isset($_GET['knopje'])) {
-    $id = $_GET["rekening_id"];
-    $sql = "DELETE FROM rekeningen WHERE rekening_id=?";
-    $db->run($sql, [$id]);
+
+    $rekening_id = $_GET["rekening_id"];
+    DeleteRekening($db, $rekening_id);
+    
     header('Location: select-rekening.php');
 }
 
@@ -25,8 +25,8 @@ if (isset($_GET['knopje'])) {
 <body>
 <h2>Delete row</h2>
 <form method="GET">
-        <label for="id">Rekening ID:</label>
-        <?php echo("<input type='text' name='rekening_id' value='$id'>"); ?>
+        <label for="rekening_id">Rekening ID:</label>
+        <?php echo("<input type='text' name='rekening_id' value='$rekening_id'>"); ?>
         <input type="submit" name="knopje">
     </form>
     <h3><a href="select-rekening.php">Terug</a></h3>

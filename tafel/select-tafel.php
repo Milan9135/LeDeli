@@ -1,10 +1,8 @@
 <?php 
-include "../db.php";
 include "tafel.php";
 
 // Selecteer alle gegevens uit de Tafels tabel
-$sqlTafels = "SELECT * FROM Tafels";
-$tafels = $db->run($sqlTafels)->fetchAll(PDO::FETCH_ASSOC);
+$tafels = GetTafels($db);
 
 ?>
 <!DOCTYPE html>
@@ -39,7 +37,7 @@ $tafels = $db->run($sqlTafels)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $db->getKlantNaam($tafel['klant_id'], $db) ?></td>
             <td>
                 <?php echo("<a href='edit-tafel.php?tafel_id=$tafel[tafel_id]&klant_id=$tafel[klant_id]'>edit</a>") ?>
-                <?php echo("<a href='delete-tafel.php?id=$tafel[tafel_id]'>delete</a>") ?>
+                <?php echo("<a href='delete-tafel.php?tafel_id=$tafel[tafel_id]'>delete</a>") ?>
             </td>
         </tr>
     <?php } ?>

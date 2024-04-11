@@ -1,5 +1,5 @@
 <?php 
-include "../db.php";
+include "reservering.php";
 
 $reservering_id = htmlspecialchars($_GET['reservering_id'], ENT_QUOTES, 'UTF-8');
 $klant_id = htmlspecialchars($_GET['klant_id'], ENT_QUOTES, 'UTF-8');
@@ -16,8 +16,9 @@ if (isset($_GET['knopje'])) {
     $begin_tijd = htmlspecialchars($_GET['begin_tijd'], ENT_QUOTES, 'UTF-8');
     $eind_tijd = htmlspecialchars($_GET['eind_tijd'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "UPDATE Reserveringen SET klant_id=?, tafel_id=?, reserverings_datum=?, begin_tijd=?, eind_tijd=? WHERE reservering_id=?";
-    $db->run($sql, [$klant_id, $tafel_id, $reserverings_datum, $begin_tijd, $eind_tijd, $reservering_id]);
+    $reservering = new Reservering($reservering_id, $klant_id, $tafel_id, $reserverings_datum, $begin_tijd, $eind_tijd);
+    $reservering->Edit($db);
+
     header('Location: select-reservering.php');
 }
 ?>

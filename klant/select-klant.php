@@ -1,10 +1,9 @@
 <?php
-include "../db.php";
+
 include "klant.php";
 
 // Selecteer alle gegevens uit de Klanten tabel
-$sqlKlanten = "SELECT * FROM Klanten";
-$klanten = $db->run($sqlKlanten)->fetchAll(PDO::FETCH_ASSOC);
+$klanten = GetKlanten($db);
 
 ?>
 

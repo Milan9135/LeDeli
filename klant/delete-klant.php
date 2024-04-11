@@ -1,13 +1,12 @@
 <?php 
 
-include "../db.php";
+include "klant.php";
 
 $id = $_GET["klant_id"];
 
 if (isset($_GET['knopje'])) {
     $id = $_GET["klant_id"];
-    $sql = "DELETE FROM Klanten WHERE klant_id=?";
-    $db->run($sql, [$id]);
+    DeleteKlant($db, $id);
     header('Location: select-klant.php');
 }
 

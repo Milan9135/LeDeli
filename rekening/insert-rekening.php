@@ -1,5 +1,4 @@
 <?php
-include "../db.php";
 include "rekening.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -7,9 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_id = $_POST['product_id'];
     $aantal = $_POST['aantal'];
 
-    $sql = "INSERT INTO rekeningen (klant_id, product_id, aantal) VALUES (?, ?, ?)";
-    $args = [$klant_id, $product_id, $aantal];
-    $db->run($sql, $args);
+    $rekening = new Rekening("Empty", $klant_id, $product_id, $aantal);
+    $rekening->Insert($db);
 }
 ?>
 

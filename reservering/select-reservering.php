@@ -1,10 +1,8 @@
 <?php 
-include "../db.php";
 include "reservering.php";
 
 // Selecteer alle gegevens uit de Reserveringen tabel
-$sqlReserveringen = "SELECT * FROM Reserveringen";
-$reserveringen = $db->run($sqlReserveringen)->fetchAll(PDO::FETCH_ASSOC);
+$reserveringen = GetReserveringen($db);
 
 ?>
 <!DOCTYPE html>

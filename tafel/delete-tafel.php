@@ -1,13 +1,13 @@
 <?php 
+include "tafel.php";
 
-include "../db.php";
-
-$id = $_GET["id"];
+$tafel_id = $_GET["tafel_id"];
 
 if (isset($_GET['knopje'])) {
-    $id = $_GET["id"];
-    $sql = "DELETE FROM tafels WHERE tafel_id=?";
-    $db->run($sql, [$id]);
+    $tafel_id = $_GET["tafel_id"];
+
+    DeleteTafel($db, $tafel_id);
+    
     header('Location: select-tafel.php');
 }
 
@@ -25,8 +25,8 @@ if (isset($_GET['knopje'])) {
 <body>
 <h2>Delete row</h2>
 <form method="GET">
-        <label for="id">id:</label>
-        <?php echo("<input type='text' name='id' value='$id'>"); ?>
+        <label for="tafel_id">id:</label>
+        <?php echo("<input type='text' name='tafel_id' value='$tafel_id'>"); ?>
         <input type="submit" name="knopje">
     </form>
     <h3><a href="select-tafel.php">terug</a></h3>

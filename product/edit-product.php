@@ -1,5 +1,5 @@
 <?php 
-include "../db.php";
+include "product.php";
 
 $product_id = htmlspecialchars($_GET['product_id'], ENT_QUOTES, 'UTF-8');
 $omschrijving = htmlspecialchars($_GET['omschrijving'], ENT_QUOTES, 'UTF-8');
@@ -10,8 +10,8 @@ if (isset($_GET['knopje'])) {
     $omschrijving = htmlspecialchars($_GET['omschrijving'], ENT_QUOTES, 'UTF-8');
     $prijs = htmlspecialchars($_GET['prijs'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "UPDATE producten SET omschrijving=?, prijs=? WHERE product_id=?";
-    $db->run($sql, [$omschrijving, $prijs, $product_id]);
+    $product = new Product($product_id, $omschrijving, $prijs);
+    $product->Edit($db);
     header('Location: select-product.php');
 }
 ?>

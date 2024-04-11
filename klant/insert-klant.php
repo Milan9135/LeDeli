@@ -1,5 +1,5 @@
 <?php
-include "../db.php";
+
 include "klant.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,9 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Wachtwoord hashen voordat het wordt opgeslagen in de database
     $hashed_wachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO klanten (klant_naam, email, wachtwoord) VALUES (?, ?, ?)";
-    $args = [$klant_naam, $email, $hashed_wachtwoord]; // Gebruik het gehashde wachtwoord
-    $db->run($sql, $args);
+    $klant = new Klant("empty", $klant_naam, $email, $hashed_wachtwoord);
+    $klant->Insert($db);
 }
 ?>
 

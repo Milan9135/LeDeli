@@ -1,10 +1,7 @@
 <?php 
-include "../db.php";
 include "product.php";
 
-// Selecteer alle gegevens uit de Producten tabel
-$sqlProducten = "SELECT * FROM Producten";
-$producten = $db->run($sqlProducten)->fetchAll(PDO::FETCH_ASSOC);
+$producten = GetProducten($db);
 
 ?>
 <!DOCTYPE html>

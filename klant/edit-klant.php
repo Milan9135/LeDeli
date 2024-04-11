@@ -1,5 +1,5 @@
 <?php 
-include "../db.php";
+include "klant.php";
 
 $klant_id = htmlspecialchars($_GET['klant_id'], ENT_QUOTES, 'UTF-8');
 $klant_naam = htmlspecialchars($_GET['klant_naam'], ENT_QUOTES, 'UTF-8');
@@ -12,8 +12,8 @@ if (isset($_GET['knopje'])) {
     $email = htmlspecialchars($_GET['email'], ENT_QUOTES, 'UTF-8');
     $wachtwoord = htmlspecialchars($_GET['wachtwoord'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "UPDATE klanten SET klant_naam=?, email=?, wachtwoord=? WHERE klant_id=?";
-    $db->run($sql, [$klant_naam, $email, $wachtwoord, $klant_id]);
+    $klant = new Klant($klant_id, $klant_naam, $email, $wachtwoord);
+    $klant->Edit($db);
     header('Location: select-klant.php');
 }
 ?>

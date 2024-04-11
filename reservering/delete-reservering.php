@@ -1,13 +1,11 @@
 <?php 
+include "reservering.php";
 
-include "../db.php";
-
-$id = $_GET["reservering_id"];
+$reservering_id = $_GET["reservering_id"];
 
 if (isset($_GET['knopje'])) {
-    $id = $_GET["reservering_id"];
-    $sql = "DELETE FROM reserveringen WHERE reservering_id=?";
-    $db->run($sql, [$id]);
+    $reservering_id = $_GET["reservering_id"];
+    DeleteReservering($db, $reservering_id);
     header('Location: select-reservering.php');
 }
 
@@ -25,8 +23,8 @@ if (isset($_GET['knopje'])) {
 <body>
 <h2>Delete row</h2>
 <form method="GET">
-        <label for="id">Reservering ID:</label>
-        <?php echo("<input type='text' name='reservering_id' value='$id'>"); ?>
+        <label for="reservering_id">Reservering ID:</label>
+        <?php echo("<input type='text' name='reservering_id' value='$reservering_id'>"); ?>
         <input type="submit" name="knopje">
     </form>
     <h3><a href="select-reservering.php">Terug</a></h3>

@@ -1,5 +1,5 @@
 <?php 
-include "../db.php";
+include "tafel.php";
 
 $tafel_id = htmlspecialchars($_GET['tafel_id'], ENT_QUOTES, 'UTF-8');
 $klant_id = htmlspecialchars($_GET['klant_id'], ENT_QUOTES, 'UTF-8');
@@ -8,8 +8,9 @@ if (isset($_GET['knopje'])) {
     $tafel_id = htmlspecialchars($_GET['tafel_id'], ENT_QUOTES, 'UTF-8');
     $klant_id = htmlspecialchars($_GET['klant_id'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "UPDATE Tafels SET klant_id=? WHERE tafel_id=?";
-    $db->run($sql, [$klant_id, $tafel_id]);
+    $tafel = new Tafel($tafel_id, $klant_id);
+    $tafel->Edit($db);
+
     header('Location: select-tafel.php');
 }
 ?>

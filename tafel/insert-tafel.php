@@ -1,13 +1,11 @@
 <?php
-include "../db.php";
 include "tafel.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klant_id = $_POST['klant_id'];
 
-    $sql = "INSERT INTO tafels (klant_id) VALUES (?)";
-    $args = [$klant_id];
-    $db->run($sql, $args);
+    $tafel = new Tafel("Empty", $klant_id);
+    $tafel->Insert($db);
 }
 ?>
 

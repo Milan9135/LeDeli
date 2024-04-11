@@ -1,5 +1,4 @@
 <?php
-include "../db.php";
 include "reservering.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,9 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $begin_tijd = $_POST['begin_tijd'];
     $eind_tijd = $_POST['eind_tijd'];
 
-    $sql = "INSERT INTO reserveringen (klant_id, tafel_id, reserverings_datum, begin_tijd, eind_tijd) VALUES (?, ?, ?, ?, ?)";
-    $args = [$klant_id, $tafel_id, $reserverings_datum, $begin_tijd, $eind_tijd];
-    $db->run($sql, $args);
+    $reservering = new Reservering("Empty", $klant_id, $tafel_id, $reserverings_datum, $begin_tijd, $eind_tijd);
+    $reservering->Insert($db);
 }
 ?>
 

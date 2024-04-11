@@ -1,10 +1,8 @@
 <?php 
-include "../db.php";
 include "rekening.php";
 
 // Selecteer alle gegevens uit de rekeningen tabel
-$sqlRekeningen = "SELECT * FROM rekeningen";
-$rekeningen = $db->run($sqlRekeningen)->fetchAll(PDO::FETCH_ASSOC);
+$rekeningen = GetRekeningen($db);
 
 ?>
 <!DOCTYPE html>

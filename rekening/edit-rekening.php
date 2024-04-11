@@ -1,5 +1,5 @@
 <?php 
-include "../db.php";
+include "rekening.php";
 
 $rekening_id = htmlspecialchars($_GET['rekening_id'], ENT_QUOTES, 'UTF-8');
 $klant_id = htmlspecialchars($_GET['klant_id'], ENT_QUOTES, 'UTF-8');
@@ -12,8 +12,9 @@ if (isset($_GET['knopje'])) {
     $product_id = htmlspecialchars($_GET['product_id'], ENT_QUOTES, 'UTF-8');
     $aantal = htmlspecialchars($_GET['aantal'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "UPDATE Rekeningen SET klant_id=?, product_id=?, aantal=? WHERE rekening_id=?";
-    $db->run($sql, [$klant_id, $product_id, $aantal, $rekening_id]);
+    $rekening = new Rekening($rekening_id, $klant_id, $product_id, $aantal);
+    $rekening->Edit($db);
+    
     header('Location: select-rekening.php');
 }
 ?>
